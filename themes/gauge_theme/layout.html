@@ -104,30 +104,6 @@
                     v: {{ current_version }}
                     <span class="fa fa-caret-down"></span>
                 </span>
-                <div class="rst-other-versions">
-                    {%- if versions %}
-                    <dl>
-                        <dt>Versions</dt>
-                        {%- for v in versions.split(' ') %}
-                        <dd>
-                          {%- if v == 'latest' %}
-                            <a href="/">{{ v }}</a>
-                          {% else %}
-                            <a href="/{{v}}/index.html">{{ v }}</a>
-                          {% endif %}
-                        </dd>
-                        {%- endfor %}
-                    </dl>
-                    {%- endif %}
-                    {%- if current_version %}
-                    <dl>
-                        <dt>Downloads</dt>
-                        <dd>
-                          <a href="{{ pathto('downloads/gauge-v-' + current_version.replace('latest', latest_version) + '.zip', 1) }}">htmlzip</a>
-                        </dd>
-                    </dl>
-                    {%- endif %}
-                </div>
             </div>
             {%- endif %}
           {% endblock %}
